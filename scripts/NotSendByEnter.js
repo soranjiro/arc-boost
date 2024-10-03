@@ -1,3 +1,4 @@
+// 日本語入力確定のEnterでチャットを送信しないようにする
 document.addEventListener('DOMContentLoaded', () => {
   console.log("running boost...");
 
@@ -7,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return result.singleNodeValue;
   }
 
-  // 質問するテキストエリアをIDで指定し
+  // 質問するテキストエリアをXPathで指定（XPathはNotebooklm）
   const xpath = '/html/body/labs-tailwind-root/div/notebook/div/div[2]/div/div/div[2]/chat-layout/div/omnibar/div/div[2]/div[2]/query-box/div/div/form/textarea';
 
   function handleKeydown(e, cmdEnter) {
