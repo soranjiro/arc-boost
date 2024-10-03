@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let cmdEnter = false;
 
   function handleKeydown(e) {
-    console.log("Keydown event detected:", e);
+    // console.log("Keydown event detected:", e);
 
     // 押されたキーがCmd + Enterだった場合のみ
     if (e.key === 'Enter' && e.metaKey) {
-      console.log("Cmd + Enter detected");
+      // console.log("Cmd + Enter detected");
       cmdEnter = true;
       // プログラム的に Enter キーの押下イベントを発生させる
       const enterEvent = new KeyboardEvent('keydown', {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // それ以外の場合はイベントの伝播を中止する(日本語の確定は行われる)
     if (e.key === 'Enter' && !cmdEnter) {
-      console.log("Stopping immediate propagation");
+      // console.log("Stopping immediate propagation");
       e.preventDefault();
       e.stopImmediatePropagation();
     }
@@ -43,8 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function checkForTextarea() {
     const textarea = getElementByClassName(className);
     if (textarea) {
-      console.log("Textarea found:", textarea);
-      console.log("Textarea content:", textarea.value);
+      // console.log("Textarea found:", textarea);
+      // console.log("Textarea content:", textarea.value);
 
       // そのエリア内でのキーダウン(キーの入力)のイベントを検知
       textarea.addEventListener('keydown', handleKeydown, true); // capture フェーズでイベントリスナーを設定
